@@ -73,7 +73,7 @@ function outerFunction (){
     output();
 ```
 ## Question no.2
-Create a function that returns a counte
+Create a function that returns a counter
 ```
 function createCounter(n) {
 	
