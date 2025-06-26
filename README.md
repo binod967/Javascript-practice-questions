@@ -110,21 +110,21 @@ function fibonacci(n, memo = {}) {
   return memo[n];
 }
  console.log(fibonacci(11));
- ```
+```
  ## Question no.9
  Flatten a deeply nested array using recursion
- ```
+```
 const arr = [1, [2, 3, [4, [5]], 6], 7,8];
 console.log(arr.flat(1));
 console.log(arr.flat(2));
 
 
 console.log(arr.flat(Infinity))
- ```
+```
  # Promises & Async
  ## Question no.10
  Simulate a delay with setTimeout and Promise
- ```
+```
  let promise = new Promise(function(resolve, reject) {
 alert("Hello")
 resolve(56)
@@ -138,7 +138,7 @@ console. log("Hello Two in 2 seconds")
 
 console. log("My name is " + "Hello Three" )
 console. log(promise)
- ```
+```
  ## Question no.11
 Create a function that wraps a value in a resolved Promise
 ```
