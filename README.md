@@ -1,4 +1,3 @@
-# Javascript-practice-questions
 # Arrays and Objects
 ## Question no.1
 Reverse an array without using .reverse()
@@ -59,7 +58,7 @@ var data = Object.groupBy(people, ({age}) => age);
 console.log(data);
 ```
 # Functions & Scope
-## Question no.1
+## Question no.5
 Explain and create a closure
 ```
 function outerFunction (){
@@ -72,8 +71,8 @@ function outerFunction (){
     const output = outerFunction();
     output();
 ```
-## Question no.2
-Create a function that returns a counter
+## Question no.6
+Create a function that returns a counte
 ```
 function createCounter(n) {
 	
@@ -87,6 +86,7 @@ console.log(counter())
 console.log(counter())
 ```
 # Recursion
+## Quetsion no.7
 Factorial using recursion
 ```
 function factorial (n) {
@@ -97,3 +97,92 @@ return n * (factorial(n - 1));
 }
 console.log(factorial(6));
 ```    
+
+## Question no.8
+Fibonacci sequence with memoization
+```
+function fibonacci(n, memo = {}) {
+  if (n <= 1) return n;
+
+  if (memo[n]) return memo[n];
+
+  memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
+  return memo[n];
+}
+ console.log(fibonacci(11));
+ ```
+ ## Question no.9
+ Flatten a deeply nested array using recursion
+ ```
+const arr = [1, [2, 3, [4, [5]], 6], 7,8];
+console.log(arr.flat(1));
+console.log(arr.flat(2));
+
+
+console.log(arr.flat(Infinity))
+ ```
+ # Promises & Async
+ ## Question no.10
+ Simulate a delay with setTimeout and Promise
+ ```
+ let promise = new Promise(function(resolve, reject) {
+alert("Hello")
+resolve(56)
+
+})
+
+console. log("Hello One")
+setTimeout( function( ) {
+console. log("Hello Two in 2 seconds")
+}, 2000)
+
+console. log("My name is " + "Hello Three" )
+console. log(promise)
+ ```
+ ## Question no.11
+Create a function that wraps a value in a resolved Promise
+```
+ wrapInPromise("Hello, world!")
+  .then(result => { console.log(result);});
+```
+## Question no.12
+Chain multiple promises with .then()
+```
+function firstTask() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log("First task done");
+      resolve("Data from first");
+    }, 1000);
+  });
+}
+
+function secondTask(data) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log("Second task done, got:", data);
+      resolve("Data from second");
+    }, 1000);
+  });
+}
+
+function thirdTask(data) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log("Third task done, got:", data);
+      resolve("All done!");
+    }, 1000);
+  });
+}
+
+firstTask()
+  .then(result1 => {
+    return secondTask(result1);
+  })
+  .then(result2 => {
+    return thirdTask(result2);
+  })
+  .then(finalResult => {
+    console.log(finalResult); 
+  });
+```
